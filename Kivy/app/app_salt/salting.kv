@@ -1,0 +1,74 @@
+<ItemLabel@Label>:
+    font_size: 25   # '25sp' - для мобильного приложения
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size
+
+<Container>:
+    rows: 3
+
+    text_input: text_input
+    salt: salt
+    nitro: nitro
+    sugars: sugars
+    starts: starts
+    time: time
+
+    AnchorLayout
+        size_hint: 1, 0.1
+
+        TextInput:
+            id: text_input
+            multiline: False
+            font_size: 40
+            input_type: 'number'
+            input_filter: 'int'
+
+    GridLayout:
+        cols: 2
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [40,0,0,0]
+
+            ItemLabel:
+                text: 'Соль'
+            ItemLabel:
+                text: 'Старты'
+            ItemLabel:
+                text: 'Моносахара'
+            ItemLabel:
+                text: 'Нитритная соль'
+            ItemLabel:
+                text: 'Время засолки'
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [20,0,0,0]
+            size_hint: 0.5, 1
+
+            ItemLabel:
+                id: salt
+                text: '0'
+            ItemLabel:
+                id: nitro
+                text: '0'
+            ItemLabel:
+                id: sugars
+                text: '0'
+            ItemLabel:
+                id: starts
+                text: '0'
+            ItemLabel:
+                id: time
+                text: '0'
+
+    BoxLayout:
+        size_hint: 0.9, 0.15
+        padding: [120,10,120,20]
+
+        Button:
+            text: 'Вычислить'
+            font_size: 20
+            on_release:
+                root.calculate()

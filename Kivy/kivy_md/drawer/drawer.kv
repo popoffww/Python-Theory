@@ -1,0 +1,26 @@
+NavigationLayout:
+
+    MDNavigationDrawer:
+        drawer_logo: 'kivymd_logo.jpeg'
+        NavigationDrawerSubheader:
+            text: 'Меню приложения'
+        NavigationDrawerIconButton:
+            icon: 'lock'
+            text: 'Заблокировано!'
+            on_release:
+                print('Заблокировано!')
+        NavigationDrawerIconButton:
+            icon: 'bookmark'
+            text: 'Закладка'
+            on_release:
+                print('Закладка')
+        NavigationDrawerIconButton:
+            icon: 'cake'
+            text: 'Пирог'
+            on_release:
+                print('Пирог')
+    Button:
+        text: 'Жми'
+        font_size: 30
+        on_release:
+            root.toggle_nav_drawer()

@@ -1,0 +1,32 @@
+
+
+<Authorize>:
+
+    login: login
+    email: email
+
+    GridLayout:
+        cols: 1
+        size: root.width -200, root.height -200
+        pos: 100, 100
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: 'Логин:'
+
+            TextInput
+                id: login
+                multiline: False
+
+            Label:
+                text: 'Email:'
+
+            TextInput
+                id: email
+                multiline: False
+
+        Button:
+            text: 'OK'
+            on_press: root.btn()

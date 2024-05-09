@@ -1,0 +1,29 @@
+
+
+<Container>:
+    rows: 3
+    padding: 50
+
+    abracadabra: text_input
+    label_text: label
+
+    TextInput:
+        id: text_input
+        multiline: False
+        size_hint: 1, 0.5
+        font_size: 40
+
+
+    Label:
+        id: label
+        text: 'Text'
+        font_size: 40
+
+    FloatLayout:
+        Button:
+            text: 'Text'
+            size_hint: 0.5, 0.4
+            font_size: 40
+            pos_hint: {'center_x':0.5, 'y':0.1}
+
+            on_release: root.change_text()

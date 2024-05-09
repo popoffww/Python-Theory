@@ -1,0 +1,3 @@
+В новых версиях KivyMD не требуется определение стиля Light - он по умолчанию
+
+self.theme_cls.theme_style = 'Light'

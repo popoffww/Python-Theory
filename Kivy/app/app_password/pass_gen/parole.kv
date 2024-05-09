@@ -1,0 +1,58 @@
+<PassGenGridLayout>:
+    rows: 4
+    display: entry
+    result: label
+    spacing: 40
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+            Color:
+                rgba: 1, 1, 1, 1
+
+        Button:
+            size_hint_x: None
+            width: 400
+            id: btn_top
+            text: 'Генератор паролей' if btn_top.state == 'normal' else 'Создай свой пароль'
+            font_size: 25
+
+    BoxLayout:
+        size_hint_y: None
+        height: "40dp"
+        Label:
+            text: "Введите число\nсимволов пароля"
+            font_size: 20
+        TextInput:
+            id: entry
+            font_size: 28
+            input_type: 'number'
+            input_filter: 'int'
+
+    BoxLayout:
+        padding:[90,50,90,40]
+        Button:
+            id: btn
+            text: 'Создать пароль' if btn.state == 'normal' else 'Создаю пароль'
+            font_size: 25
+            on_press: root.get_password()
+            BoxLayout:
+                padding: [140,60,0,0]
+                Label:
+                    halign: 'right'
+                    valign: 'middle'
+                    text_size: 500, 500
+                    markup: True
+                    text: '[size=20px][color=#008000][b]Kivy[/b][/color] [color=#FFFF00]Python[/color] [color=#FF7F50][i][b]Program[/color][/i][/b][/size]'
+
+    BoxLayout:
+        padding:[0,0,0,80]
+        Label:
+            id: label
+            text: 'Новый пароль'
+            font_size: 38

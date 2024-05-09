@@ -1,0 +1,33 @@
+
+
+
+<FactBoxLayout>:
+    id: factorial
+    display: entry
+    result: label
+    orientation: 'vertical'
+    
+    Label:
+        text: '   Введите число\nФакториал числа'
+        font_size: 30
+    TextInput:
+        id: entry
+        multiline: False
+        size_hint: 1, .3
+        font_size: 30
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding:[120,60,120,30]
+        Button:
+            text: 'равен'
+            font_size: 33
+            on_press: factorial.get_factorial()
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding:[0,0,0,30]
+        Label:
+            id: label
+            text: '0'
+            font_size: 40

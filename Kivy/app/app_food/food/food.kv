@@ -1,0 +1,58 @@
+<CustButton@Button>:
+    font_size: 22
+
+ManagerFood:
+    MainFood:
+    AddFood:
+    ListFood:
+
+<MainFood>:
+    name: 'main_food'
+    BoxLayout:
+        orientation: 'vertical'
+        CustButton:
+            text: 'Дневник питания'
+            on_press:
+                app.root.current = 'list_food'
+        CustButton:
+            text: 'Добавить блюдо в дневник питания'
+            on_press:
+                app.root.current = 'add_food'
+
+
+<AddFood>:
+    name: 'list_food'
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            CustButton:
+                text: '< Назад в главное меню'
+                on_press:
+                    app.root.current = 'main_food'
+        BoxLayout:
+<ListFood>:
+    name: 'add_food'
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            CustButton:
+                text: '< Назад в главное меню'
+                on_press:
+                    app.root.current = 'main_food'
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            TextInput:
+                multiline: False
+                hint_text: 'Название блюда'
+                font_size: 20
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            CustButton:
+                text: 'Добавить блюдо'
+        BoxLayout:

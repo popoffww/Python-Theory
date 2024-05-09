@@ -1,0 +1,56 @@
+<ItemLabel@Label>:
+    font_size: 25
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size
+
+<Container>:
+    rows: 3
+
+    AnchorLayout
+        size_hint: 1, 0.1
+
+        TextInput:
+            multiline: False
+            font_size: 40
+
+    GridLayout:
+        cols: 2
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [40,0,0,0]
+
+            ItemLabel:
+                text: 'Соль'
+            ItemLabel:
+                text: 'Нитритная соль'
+            ItemLabel:
+                text: 'Моносахара'
+            ItemLabel:
+                text: 'Старты'
+            ItemLabel:
+                text: 'Время засолки'
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [60,0,0,0]
+            size_hint: 0.5, 1
+
+            ItemLabel:
+                text: '0'
+            ItemLabel:
+                text: '0'
+            ItemLabel:
+                text: '0'
+            ItemLabel:
+                text: '0'
+            ItemLabel:
+                text: '0'
+
+    BoxLayout:
+        size_hint: 0.9, 0.15
+        padding: [120,10,120,20]
+        Button:
+            text: 'Вычислить'
+            font_size: 20

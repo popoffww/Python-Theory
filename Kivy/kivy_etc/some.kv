@@ -1,0 +1,73 @@
+ManagerWindow:
+    MainWindow:
+    AboutWindow:
+
+<MainWindow>:
+    name: 'main_window'
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: None
+            height: '55dp'
+            spacing: 10
+            canvas:
+                Color:
+                    rgba: 1, .863, .38, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Button:
+                background_normal: 'kivy_logo.png'
+                background_down: 'kivy_logo_dn.png'
+                size_hint_x: None
+                width: 70
+            Label:
+                markup: True
+                text: '[size=22px][color=#000000][i]Логотип[/i][/color][/size]'
+
+        BoxLayout:
+            size_hint_y: None
+            height: '100dp'
+            padding: 5
+            TextInput:
+                multiline: False
+                hint_text: 'Введите текст'
+                font_size: 22
+        BoxLayout:
+            Label:
+                text: 'Текст'
+                font_size: 25
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            Button:
+                text: 'О приложении'
+                on_press:
+                    app.root.current = 'about_window'
+            Button:
+                text: 'Выход'
+                on_press:
+                    app.root.dismiss
+
+<AboutWindow>:
+    name: 'about_window'
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 20
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            Button:
+                text: '< Назад в главное меню'
+                on_press:
+                    app.root.current = 'main_window'
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            Label:
+                text: "Приложение"
+                font_size: 20
+        BoxLayout:
+            Label:
+                markup: True
+                text: '[size=20px][color=#FF1493][b]Kivy[/b][/color] [color=#FF8C00]Python[/color] [color=#40E0D0][i][b]Program[/color][/i][/b][/size]'

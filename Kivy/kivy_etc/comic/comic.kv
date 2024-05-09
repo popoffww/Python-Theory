@@ -1,0 +1,48 @@
+<ToolButton@Button>:
+    size_hint: None, None
+    size: 75, 75
+    group: 'tool'
+<CustButton@Button>:
+    font_size: 20
+<CustLabel@Label>:
+    font_size: 17
+<ComicBoxLayout>:
+    orientation: 'vertical'
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        GridLayout:
+            cols: 2
+            ToolButton:
+                text: 'O'
+            ToolButton:
+                text: '/'
+            ToolButton:
+                text: '?'
+    RelativeLayout:
+        Label:
+            halign: 'right'
+            valign: 'middle'
+            text_size: 400, 400
+            markup: True
+            text: '[size=32px][color=#008000]The[/color] [sub]Comic[/sub] [color=#FF7F50][i][b]Creator[/color][/i][/b][/size]'
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+        CustButton:
+            text: 'Clear'
+        CustButton:
+            text: 'Remove'
+        CustButton:
+            text: 'Group'
+        CustButton:
+            text: 'Color'
+        CustButton:
+            text: 'Gestures'
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+        CustLabel:
+            text: 'Total Figures: ?'
+        CustLabel:
+            text: 'Kivy started'

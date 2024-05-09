@@ -1,0 +1,35 @@
+
+
+WindowManager:
+    MainWindow:
+    SecondWindow:
+
+<MainWindow>:
+    name: 'main'
+
+    GridLayout:
+        cols: 1
+
+        GridLayout:
+            cols: 2
+            Label:
+                text: 'Пароль'
+
+            TextInput:
+                id: text_id
+                multiline: False
+
+        Button:
+            text: 'OK'
+            on_release:
+                app.root.current = 'second' if text_id.text == 'go' else 'main'
+                root.manager.transition.direction = 'left'
+
+<SecondWindow>:
+    name: 'second'
+
+    Button:
+        text: "Назад"
+        on_release:
+            app.root.current = 'main'
+            root.manager.transition.direction = 'right'

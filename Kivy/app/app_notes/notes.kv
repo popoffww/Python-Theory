@@ -1,0 +1,61 @@
+# Reference notes.py
+#: import main notes
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
+
+<NotesBoxLayout>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+    data: ti_data
+    event: ti_event
+    notes_list: event_list
+
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+        padding:[0,0,201,0]
+        Label:
+            text: 'Дата'
+            font_size: 25
+        TextInput:
+            id: ti_data
+            multiline: False
+            font_size: 22
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+        padding:[0,0,201,0]
+        Label:
+            text: 'Событие'
+            font_size: 25
+        TextInput:
+            id: ti_event
+            multiline: False
+            font_size: 22
+
+    ListView:
+        id: event_list
+        adapter:
+            ListAdapter(data=['   '], cls=main.NoteListButton)
+
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+        spacing: 20
+        Button:
+            text: 'Добавить'
+            font_size: 20
+            on_press: root.add_note()
+        Button:
+            text: 'Заменить'
+            font_size: 20
+            on_press: root.replace_note()
+        Button:
+            text: 'Сохранить'
+            font_size: 20
+            on_press: root.save_note()
+        Button:
+            text: 'Удалить'
+            font_size: 20
+            on_press: root.delete_note()

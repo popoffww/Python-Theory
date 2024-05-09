@@ -1,0 +1,53 @@
+<TopLabel@Label>:
+    font_size: 22
+<MidLabel@Label>:
+    font_size: 20
+<TI@TextInput>:
+    font_size: 20
+<CustButton@Button>:
+    font_size: 22
+<FormBoxLayout>:
+    orientation: 'vertical'
+    BoxLayout:
+        BoxLayout:
+            orientation: 'horizontal'
+            padding: [0,0,80,0]
+            TopLabel:
+                text: 'Logo'
+        BoxLayout:
+            orientation: 'horizontal'
+            TopLabel:
+                text: 'About Us'
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+        MidLabel:
+            text: 'Name'
+        MidLabel:
+            text: 'Email'
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+        padding: [40,0,40,0]
+        spacing: 80
+        TI:
+            multiline: False
+        TI:
+            multiline: False
+    BoxLayout:
+        padding: [40,0,40,0]
+        TextInput:
+            multiline: False
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+        padding: [40,0,40,0]
+        spacing: 80
+        CustButton:
+            text: 'Submit'
+        CustButton:
+            text: 'Clear'
+    BoxLayout:
+        Label:
+            text: 'Thanks for feedback'
+            font_size: 22

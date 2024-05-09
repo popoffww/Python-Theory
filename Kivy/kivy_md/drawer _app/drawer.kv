@@ -1,0 +1,41 @@
+NavigationLayout:
+    MDNavigationDrawer:
+        <Container>:
+            orientation: 'vertical'
+            txt_prop: text_id
+            pass_prop: pass_id
+            AnchorLayout:
+                padding: [0,0,0,40]
+                MDTextField:
+                    hint_text: 'Введите число символов пароля'
+                    id: text_id
+                    multiline: False
+                    font_size: 30
+                    input_type: 'number'
+                    input_filter: 'int'
+            BoxLayout:
+                padding: [70,0,0,0]
+                MDLabel:
+                    text: 'Новый пароль'
+                    font_size: 40
+            BoxLayout:
+                padding: [70,0,0,0]
+                MDLabel:
+                    id: pass_id
+                    font_size: 40
+            BoxLayout:
+                padding: [70,0,0,40]
+                MDRaisedButton:
+                    size: 100, 75
+                    id: btn
+                    text: 'Создать пароль' if btn.state == 'normal' else 'Создаю пароль'
+                    font_size: 30
+                    on_release:
+                        root.get_password()
+
+
+    Button:
+        text: 'Жми'
+        font_size: 30
+        on_release:
+            root.toggle_nav_drawer()
