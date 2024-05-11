@@ -47,3 +47,37 @@ for c in string:
         print(chr(ord(c) - number + 26), end='')
     else:
         print(chr(ord(c) - number), end='')
+
+
+
+# Аве, Цезарь
+n = input()
+s = n
+
+for i in s:
+    if i in '.,*@!?"-':
+        s = s.replace(i, '')
+
+x = [len(j) for j in s.split()]
+counter = 0
+word = ''
+
+for c in n:
+    number = ord(c)
+    if c == ' ':
+        counter += 1
+        word += c
+    elif 65 <= number <= 90:
+        if number + x[counter] > 90:
+            word += chr(number + x[counter] - 26)
+        else:
+            word += chr(number + x[counter])
+    elif 97 <= number <= 122:
+        if number + x[counter] > 122:
+            word += chr(number + x[counter] - 26)
+        else:
+            word += chr(number + x[counter])
+    else:
+        word += c
+
+print(word)
