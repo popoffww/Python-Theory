@@ -11,6 +11,24 @@ for i in range(8):
         print('*', end='')
     print()
 
+# Треугольник основанием вверх
+number = int(input())
+for i in range(number, 0, -1):
+    print('*' * i)
+
+number = int(input())
+for i in range(number):
+    print('*' * (number - i))
+
+
+# Равнобедренный треугольник
+number = int(input())
+for i in range(1, number // 2 + 2):
+    print('*' * i)
+
+for j in range(number // 2, 0, -1):
+    print('*' * j)
+
 
 # Звездный прямоугольник с размерами 14×10
 # объявление функции

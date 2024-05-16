@@ -12,10 +12,14 @@ number = int(input())
 for i in range(number):
     print('*' * 19)
 
-
+# Треугольник основанием вверх
 number = int(input())
 for i in range(number, 0, -1):
     print('*' * i)
+
+number = int(input())
+for i in range(number):
+    print('*' * (number - i))
 
 
 
