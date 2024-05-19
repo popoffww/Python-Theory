@@ -23,6 +23,13 @@ for i in range(number):
 
 print('=' * 10)
 
+for i in range(number):
+    for j in range(i + 1):
+        print(j + 1, end=' ')
+    print()
+
+print('=' * 10)
+
 counter = 0
 for i in range(1, number + 1):
     for j in range(i):
