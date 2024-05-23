@@ -159,27 +159,6 @@ else:
     print('не делится')
 
 
-# Роскомнадзор запретил букву а
-word = input() + ' запретил букву'
-
-a = ord('а')
-for i in range(a, a + 32):
-    if chr(i) in word:
-        print((word.strip() + ' ' + chr(i)))
-        word = (word.replace(chr(i), ''))
-        word = word.replace('  ', ' ')
-
-print('=' * 20)
-
-word = input() + ' запретил букву'
-
-alphabet = [chr(i) for i in range(1072, 1104) if chr(i) != 'ё']
-for c in alphabet:
-    if c in word:
-        print(word, c)
-        word = word.replace(c, '').replace(' ', ' ').strip()
-
-
 # Тип данных bool 3.1. Предикат делимости
 def func(num1, num2):
 
@@ -209,3 +188,24 @@ for i in range(1, int(input()) + 1):
             string = string[string.find(c):]
     if result == virus:
         print(i, end=' ')
+
+
+# Роскомнадзор запретил букву а
+word = input() + ' запретил букву'
+
+a = ord('а')
+for i in range(a, a + 32):
+    if chr(i) in word:
+        print((word.strip() + ' ' + chr(i)))
+        word = (word.replace(chr(i), ''))
+        word = word.replace('  ', ' ')
+
+print('=' * 20)
+
+word = input() + ' запретил букву'
+
+alphabet = [chr(i) for i in range(1072, 1104) if chr(i) != 'ё']
+for c in alphabet:
+    if c in word:
+        print(word, c)
+        word = word.replace(c, '').replace(' ', ' ').strip()
