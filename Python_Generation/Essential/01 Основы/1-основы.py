@@ -88,8 +88,6 @@ for i in number:
 print(''.join(array)[::-1].strip(','))
 
 
-
-
 # Задача Иосифа Флавия
 n = int(input())
 k = int(input())
