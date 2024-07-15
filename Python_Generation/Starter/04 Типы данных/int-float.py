@@ -88,10 +88,3 @@ q2 = int(input())
 
 manhattan_way = abs(p1 -q1) + abs(p2 - q2)
 print(manhattan_way)
-
-
-
-
-
-
-

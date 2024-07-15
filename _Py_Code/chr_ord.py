@@ -1,3 +1,4 @@
+import string
 # 97-122 - маленькие латинские буквы
 # 65-90 - большие латинские буквы
 # 1040-1071 - большие кириллица, 1025 - Ё
@@ -16,3 +17,24 @@ for i in range(n):
     letts += chr(1040 + i)
 
 print(list(letts))
+
+
+
+letters = ''
+for i in range(26):
+    letters += chr(97 + i)
+print(letters)
+
+
+
+print(*[chr(el) for el in range(97, 123)], sep='\n')
+
+
+
+for i in range(97,123):
+    print(chr(i))
+
+
+letters = [i for i in enumerate(string.ascii_lowercase, 1)]
+dct = {el[1]: el[0] for el in letters}
+print(dct)
