@@ -23,3 +23,26 @@ if res in ('LNNNLL_NN', 'LNNNLL_NNN'):
     print('Верный номер')
 else:
     print('Неверный номер')
+
+
+# Телефонный номер
+s = input()
+
+res = ''
+
+for c in s[2:]:
+    if c.isdigit():
+        res += 'N'
+    elif c == '+':
+        res += '+'
+    elif c == '(':
+        res += '('
+    elif c == ')':
+        res += ')'
+    elif c == '-':
+        res += '-'
+
+if res in ('+7(NNN)NNN-NN-NN'):
+    print('ДА')
+else:
+    print('НЕТ')

@@ -2,6 +2,16 @@ import functools
 from datetime import datetime
 
 
+num = int(input())
+a = 0
+b = 1
+while num:
+    print(b, end=' ')
+    a, b = b, a + b
+    num -= 1
+
+
+
 def fib():
     first, second = 0, 1
     while True:

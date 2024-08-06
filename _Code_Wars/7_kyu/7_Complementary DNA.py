@@ -1,47 +1,20 @@
-import string
-# Перевод десятичного числа в двоичное
-n = int(input())
-
-to_bin = ''
-res = ''
-
-while n > 0:
-    to_bin += str(n % 2)
-    n //= 2
-
-print(to_bin[::-1])
-
-for i in range(-1, -len(to_bin) - 1, -1):
-        res += to_bin[i]
-
-print(res)
+pairs = {'A':'T','T':'A','C':'G','G':'C'}
+def DNA_strand(dna):
+    return ''.join([pairs[x] for x in dna])
 
 
-# Деление строки попалам
-s = input()
-
-a = s[:(len(s) + 1) // 2]
-b = s[(len(s) + 1) // 2:]
-
-print(b + a)
+print(DNA_strand("AAAA"), "TTTT", "String AAAA is")
+print(DNA_strand("ATTGC"), "TAACG", "String ATTGC is")
+print(DNA_strand("GTAT"), "CATA", "String GTAT is")
 
 
-# Палиндром
-s = input()
+def DNA_strand(dna):
+    dct = {'T': 'A', 'A': 'T', 'C': 'G', 'G': 'C',}
 
-if s == s[::-1]:
-    print('Палиндром')
-else:
-    print('Нет - не палиндром')
+    res = ''
+    for c in dna:
+        for key, value in dct.items():
+            if key == c:
+                res += value
 
-
-# Есть число в строке или нет?
-s = input()
-
-for c in s:
-    # if с in '012345667689':
-    if c in string.digits:
-        print('Есть цифры')
-        break
-else:
-print('Нет цифр')
+    return res
